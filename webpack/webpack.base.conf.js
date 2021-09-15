@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 模板
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // css 代码打包分离
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // css 代码打包分离
 
 const resolvePath = (relativePath) => path.resolve(__dirname, relativePath); // 根据相对路径获取绝对路径
 
@@ -30,6 +30,9 @@ const baseConfig = {
             title: 'react app',
             template: resolvePath('../public/index.html'),
             filename: 'index.html',
+        }),
+        new MiniCssExtractPlugin({
+            filename: `[name].[hash:8].css`
         }),
     ]
 }

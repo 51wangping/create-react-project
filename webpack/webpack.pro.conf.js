@@ -14,9 +14,6 @@ module.exports = merge(baseConfig, {
     mode: 'production',
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: `[name].[hash:8].css`
-        }),
         new CssMinimizerWebpackPlugin(),
     ]
 })
