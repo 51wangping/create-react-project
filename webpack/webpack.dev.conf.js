@@ -2,8 +2,7 @@ const {
     merge
 } = require('webpack-merge');
 const {
-    baseConfig,
-    resolvePath
+    baseConfig
 } = require('./webpack.base.conf');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'); // 错误提示
 

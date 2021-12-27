@@ -5,25 +5,39 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // css 代码�
 const resolvePath = (relativePath) => path.resolve(__dirname, relativePath); // 根据相对路径获取绝对路径
 
 const baseConfig = {
-    entry: resolvePath('../src/index.jsx'),
+    entry: resolvePath('../src/index.tsx'),
+    devtool: 'inline-source-map',
     output: {
         path: resolvePath('../dist'),
         filename: '[name].bundle.js',
     },
     module: {
-        rules: [{
+        rules: [
+        {
             test: /\.css$/,
             use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
-        }, {
+        },
+        {
             test: /\.less$/,
             use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'],
-        }, {
-            test: /\.(js|jsx)$/,
-            use: 'babel-loader'
-        }, {
+        },
+        {
+            test: /\.(ts|tsx)$/,
+            use: [
+              {
+                loader: 'ts-loader',
+              },
+              'babel-loader'
+            ]
+        }, 
+        {
             test: /\.svg$/,
             type: 'asset/resource'
-        }],
+        }
+      ],
+    },
+    resolve: {
+      extensions: [ '.tsx', '.ts', '.js' ]
     },
     plugins: [
         new HtmlWebpackPlugin({
