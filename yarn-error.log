@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/bruce/.nvm/versions/node/v16.13.0/bin/node /usr/local/bin/yarn add webpack-node-external -D
+  /Users/bruce/.nvm/versions/node/v16.13.0/bin/node /usr/local/bin/yarn add import classNames from classnames
 
 PATH: 
   /Users/bruce/.nvm/versions/node/v16.13.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bruce/.nvm/versions/node/v16.13.0/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/webpack-node-external: Not found
+  Error: https://registry.npm.taobao.org/classNames: Not found
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66987:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140748:22)
       at Request.emit (node:events:390:28)
@@ -33,9 +33,8 @@ npm manifest:
     "description": "",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "webpack --config ./webpack/webpack.prod.conf.js",
-      "dev": "webpack-dev-server --config ./webpack/webpack.dev.conf.js"
+      "dev": "webpack-dev-server --config ./webpack/webpack.dev.conf.js",
+      "build": "webpack --config ./webpack/webpack.prod.conf.js"
     },
     "keywords": [],
     "author": "",
@@ -64,7 +63,8 @@ npm manifest:
       "webpack": "^5.51.2",
       "webpack-cli": "^4.8.0",
       "webpack-dev-server": "^4.1.0",
-      "webpack-merge": "^5.8.0"
+      "webpack-merge": "^5.8.0",
+      "webpack-node-externals": "^3.0.0"
     },
     "dependencies": {
       "react": "^17.0.2",
@@ -4729,6 +4729,11 @@ Lockfile:
     dependencies:
       clone-deep "^4.0.1"
       wildcard "^2.0.0"
+  
+  webpack-node-externals@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.nlark.com/webpack-node-externals/download/webpack-node-externals-3.0.0.tgz?cache=0&sync_timestamp=1618999751438&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwebpack-node-externals%2Fdownload%2Fwebpack-node-externals-3.0.0.tgz#1a3407c158d547a9feb4229a9e3385b7b60c9917"
+    integrity sha1-GjQHwVjVR6n+tCKanjOFt7YMmRc=
   
   webpack-sources@^3.2.0:
     version "3.2.0"

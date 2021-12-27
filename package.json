@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config ./webpack/webpack.prod.conf.js",
-    "dev": "webpack-dev-server --config ./webpack/webpack.dev.conf.js"
+    "dev": "webpack-dev-server --config ./webpack/webpack.dev.conf.js",
+    "build": "webpack --config ./webpack/webpack.prod.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +19,7 @@
     "@types/react-dom": "^17.0.11",
     "autoprefixer": "^10.3.4",
     "babel-loader": "^8.2.2",
+    "classnames": "^2.3.1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
