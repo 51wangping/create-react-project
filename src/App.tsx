@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <div>{process.env.API_HOST}</div>
       </header>
     </div>
   );
