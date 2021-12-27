@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 模板
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // css 代码打包分离
+const isDev = process.env.NODE_ENV === 'development';
+const WebpackBar = require('webpackbar'); // 显示打包进度条用的
+
 
 const resolvePath = (relativePath) => path.resolve(__dirname, relativePath); // 根据相对路径获取绝对路径
 
@@ -23,12 +26,14 @@ const baseConfig = {
         },
         {
             test: /\.(ts|tsx)$/,
+            exclude: /node_modules/,
             use: [
+            
+              'babel-loader',
               {
                 loader: 'ts-loader',
               },
-              'babel-loader'
-            ]
+            ],
         }, 
         {
             test: /\.svg$/,
@@ -40,6 +45,7 @@ const baseConfig = {
       extensions: [ '.tsx', '.ts', '.js' ]
     },
     plugins: [
+      
         new HtmlWebpackPlugin({
             title: 'react app',
             template: resolvePath('../public/index.html'),
@@ -48,7 +54,11 @@ const baseConfig = {
         new MiniCssExtractPlugin({
             filename: `[name].[hash:8].css`
         }),
-    ]
+        new WebpackBar({
+          name: isDev ? '正在启动' : '正在打包',
+          color: '#fa8c16'
+        }),
+    ],
 }
 
 module.exports = {
